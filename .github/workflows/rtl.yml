@@ -1,0 +1,21 @@
+name: RTL Verification
+
+on:
+  push:
+    paths: ['rtl/**', 'tb/**', 'sim/**']
+  pull_request:
+    paths: ['rtl/**', 'tb/**', 'sim/**']
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Verilator
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y verilator
+
+      - name: Run Verilator Lint
+        run: make rtl-lint

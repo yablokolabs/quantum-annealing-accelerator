@@ -1,0 +1,38 @@
+name: Frontend CI
+
+on:
+  push:
+    paths: ['frontend/**']
+  pull_request:
+    paths: ['frontend/**']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: |
+          cd frontend
+          npm ci
+
+      - name: Type check
+        run: |
+          cd frontend
+          npx tsc --noEmit
+
+      - name: Lint
+        run: |
+          cd frontend
+          npx eslint src/
+
+      - name: Build
+        run: |
+          cd frontend
+          npm run build
