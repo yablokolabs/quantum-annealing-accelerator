@@ -13,7 +13,7 @@
 
 *An industrial-grade stochastic Ising machine accelerator with real-time visualization, implemented in synthesizable SystemVerilog RTL.*
 
-**[Explore Architecture](#architecture) · [Run Simulation](#-quick-start) · [View Documentation](#-documentation) · [Benchmarks](#-benchmark-results)**
+**[Explore Architecture](#architecture) · [Run Simulation](#-quick-start) · [View Documentation](#-documentation) · [Benchmarks](#-benchmark-results) · [Live Demo](https://quantumwa-gsxwc5do.manus.space)**
 
 ---
 
@@ -27,7 +27,7 @@ This project implements a **quantum-inspired digital annealing accelerator** —
 
 The accelerator targets **NP-hard optimization problems** such as Max-Cut, Graph Partitioning, Boolean Satisfiability, and the Traveling Salesman Problem by mapping them onto the Ising model Hamiltonian:
 
-$$E = -\sum_{i<j} J_{ij}\,\sigma_i\,\sigma_j \;-\; \sum_i h_i\,\sigma_i$$
+$$E = -\sum_{i \lt j} J_{ij}\,\sigma_i\,\sigma_j \;-\; \sum_i h_i\,\sigma_i$$
 
 where spins $\sigma_i \in \lbrace -1, +1 \rbrace$, couplings $J_{ij}$ encode problem constraints, and biases $h_i$ encode local preferences.
 
@@ -116,7 +116,7 @@ Host CPU ──write──► config_registers ──weights/biases──► isi
 ### Cooling Strategies
 | Strategy | Formula | Use Case |
 |---|---|---|
-| **Linear** | $T_{n+1} = T_n - \text{rate}$ | Fast convergence, simple problems |
+| **Linear** | $T_{n+1} = T_n - r$ | Fast convergence, simple problems |
 | **Exponential** | $T_{n+1} = T_n \cdot \alpha$ | Gradual cooling, better solution quality |
 | **Adaptive** | Monitor stagnation, auto-adjust rate | Unknown problem difficulty |
 
@@ -224,7 +224,7 @@ asyncio.run(stream())
 | [`anneal_controller`](rtl/anneal_controller.sv) | Temperature schedule FSM with adaptive cooling | `INITIAL_TEMP`, `COOLING_RATE`, `STEPS_PER_TEMP`, `SCHEDULE_TYPE` |
 | [`spin_array`](rtl/spin_array.sv) | Scalable array of p-bit cells with update strategies | `NUM_SPINS`, `UPDATE_STRATEGY` |
 | [`spin_cell`](rtl/spin_cell.sv) | Probabilistic spin update engine (p-bit) | `DATA_WIDTH` (≥8 required) |
-| [`ising_coupler`](rtl/ising_coupler.sv) | Local field computation: $h_{\text{eff}} = \sum_j J_{ij}\sigma_j + h_i$ | `NUM_SPINS`, `PIPELINED` |
+| [`ising_coupler`](rtl/ising_coupler.sv) | Local field computation | `NUM_SPINS`, `PIPELINED` |
 | [`rng_module`](rtl/rng_module.sv) | LFSR / xorshift PRNG with deterministic replay | `WIDTH`, `SEED`, `XORSHIFT_MODE` |
 | [`energy_tracker`](rtl/energy_tracker.sv) | Full Hamiltonian computation and best-solution tracking | `CONVERGE_THRESHOLD=64` |
 
