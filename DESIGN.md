@@ -27,7 +27,7 @@ The Ising model is a mathematical framework from statistical mechanics that desc
 $$E(\boldsymbol{\sigma}) = -\sum_{i<j} J_{ij}\,\sigma_i\,\sigma_j \;-\; \sum_i h_i\,\sigma_i$$
 
 where:
-- $\sigma_i \in \{-1, +1\}$ — spin state of the $i$-th variable
+- $\sigma_i \in \lbrace -1, +1 \rbrace$ — spin state of the $i$-th variable
 - $J_{ij} \in \mathbb{R}$ — coupling weight between spins $i$ and $j$
 - $h_i \in \mathbb{R}$ — external bias (local field) on spin $i$
 
@@ -42,7 +42,7 @@ In our hardware implementation, spins are stored as single bits:
 | `0` | $-1$ |
 | `1` | $+1$ |
 
-The conversion is: $\sigma = 2b - 1$ where $b \in \{0, 1\}$.
+The conversion is: $\sigma = 2b - 1$ where $b \in \lbrace 0, 1 \rbrace$.
 
 ### 1.3 Energy Landscapes
 
@@ -52,7 +52,7 @@ The set of all $2^N$ spin configurations defines an **energy landscape**. Findin
 
 The Ising model is mathematically equivalent to **Quadratic Unconstrained Binary Optimization (QUBO)**:
 
-$$\min_{\mathbf{x}} \; \mathbf{x}^T Q \mathbf{x}, \qquad x_i \in \{0, 1\}$$
+$$\min_{\mathbf{x}} \; \mathbf{x}^T Q \mathbf{x}, \qquad x_i \in \lbrace 0, 1 \rbrace$$
 
 The transformation between QUBO variables $x_i$ and Ising spins $\sigma_i$ is: $x_i = (\sigma_i + 1) / 2$. Any QUBO problem can be mapped to an Ising Hamiltonian and vice versa, making the Ising model a universal representation for combinatorial optimization.
 

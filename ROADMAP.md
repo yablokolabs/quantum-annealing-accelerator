@@ -82,23 +82,23 @@
 ```mermaid
 gantt
     title Development Timeline
-    dateFormat YYYY-Q
-    axisFormat %Y-Q%q
+    dateFormat YYYY-MM-DD
+    axisFormat %Y Q%q
 
     section Phase 1
-    Core RTL & Simulation    :done, p1, 2024-Q1, 2024-Q4
+    Core RTL & Simulation    :done, p1, 2024-01-01, 2024-12-31
 
     section Phase 2
-    FPGA Prototyping         :active, p2, 2025-Q1, 2025-Q2
+    FPGA Prototyping         :active, p2, 2025-01-01, 2025-06-30
 
     section Phase 3
-    Scalability              : p3, 2025-Q2, 2025-Q4
+    Scalability              : p3, 2025-04-01, 2025-12-31
 
     section Phase 4
-    Advanced Features        : p4, 2025-Q3, 2026-Q2
+    Advanced Features        : p4, 2025-07-01, 2026-06-30
 
     section Phase 5
-    System Integration       : p5, 2026-Q1, 2026-Q4
+    System Integration       : p5, 2026-01-01, 2026-12-31
 ```
 
 ---

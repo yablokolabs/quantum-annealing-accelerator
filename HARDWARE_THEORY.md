@@ -348,7 +348,7 @@ This term is zero when the clause is satisfied and positive when violated. The t
 
 **Ising Formulation:**
 
-Uses an $N \times N$ permutation matrix encoded as $N^2$ binary spins $x_{i,t} \in \{0,1\}$ where $x_{i,t} = 1$ means city $i$ is visited at time step $t$.
+Uses an $N \times N$ permutation matrix encoded as $N^2$ binary spins $x_{i,t} \in \lbrace 0,1 \rbrace$ where $x_{i,t} = 1$ means city $i$ is visited at time step $t$.
 
 $$E_{\text{TSP}} = A\sum_i\!\left(\sum_t x_{i,t} - 1\right)^{\!2} + A\sum_t\!\left(\sum_i x_{i,t} - 1\right)^{\!2} + B\sum_t\sum_{i,j} d_{ij}\,x_{i,t}\,x_{j,t+1}$$
 

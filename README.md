@@ -29,7 +29,7 @@ The accelerator targets **NP-hard optimization problems** such as Max-Cut, Graph
 
 $$E = -\sum_{i<j} J_{ij}\,\sigma_i\,\sigma_j \;-\; \sum_i h_i\,\sigma_i$$
 
-where spins $\sigma_i \in \{-1, +1\}$, couplings $J_{ij}$ encode problem constraints, and biases $h_i$ encode local preferences.
+where spins $\sigma_i \in \lbrace -1, +1 \rbrace$, couplings $J_{ij}$ encode problem constraints, and biases $h_i$ encode local preferences.
 
 The design is inspired by industrial systems like the [Fujitsu Digital Annealer](https://www.fujitsu.com/global/services/business-services/digital-annealer/) and [Hitachi CMOS Annealing Machine](https://www.hitachi.com/rd/research/quantum/), implemented as a fully open-source, synthesizable RTL design targeting FPGA deployment.
 
