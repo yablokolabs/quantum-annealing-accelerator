@@ -13,7 +13,7 @@
 
 *An industrial-grade stochastic Ising machine accelerator with real-time visualization, implemented in synthesizable SystemVerilog RTL.*
 
-**[Explore Architecture](#architecture) · [Run Simulation](#-quick-start) · [View Documentation](#-documentation) · [Benchmarks](#-benchmark-results) · [Live Demo](https://quantumwa-gsxwc5do.manus.space)**
+**[Explore Architecture](#-architecture) · [Run Simulation](#-quick-start) · [View Documentation](#-documentation) · [Benchmarks](#-benchmark-results) · [Live Demo](https://quantumwa-gsxwc5do.manus.space)**
 
 ---
 
