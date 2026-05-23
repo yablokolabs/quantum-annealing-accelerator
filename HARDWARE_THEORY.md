@@ -121,7 +121,7 @@ D-Wave Systems builds quantum annealing processors using superconducting flux qu
 - Native physics-based computation
 
 **Limitations:**
-- Cryogenic operation (~$10M+ system cost)
+- Cryogenic operation (~\$10M+ system cost)
 - Limited connectivity requires problem embedding (wastes qubits)
 - Noise and decoherence limit computation depth
 - Quantum speedup remains debated for optimization
@@ -240,7 +240,7 @@ Modern digital annealing systems share common architectural elements:
 
 Digital annealing on CMOS provides several practical advantages:
 
-1. **Room Temperature Operation:** No cryogenics, no dilution refrigerators, no vacuum systems. A $100 FPGA board replaces a $10M quantum system.
+1. **Room Temperature Operation:** No cryogenics, no dilution refrigerators, no vacuum systems. A \$100 FPGA board replaces a \$10M quantum system.
 
 2. **Scalability:** CMOS transistor counts double every ~2 years (Moore's Law). Spin counts in digital annealers can scale with available logic resources.
 

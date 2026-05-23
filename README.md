@@ -42,7 +42,7 @@ The design is inspired by industrial systems like the [Fujitsu Digital Annealer]
 | **Connectivity** | Limited (Pegasus graph) | Fully programmable |
 | **Debugging** | Opaque quantum state | Full observability |
 | **Scalability** | Expensive, fragile | Moore's Law scaling |
-| **Cost** | $10M+ systems | $100 FPGA dev board |
+| **Cost** | \$10M+ systems | \$100 FPGA dev board |
 
 ---
 

@@ -200,7 +200,7 @@ The simplest schedule. Temperature decreases by a constant amount each step. Fas
 
 ### 5.2 Exponential Cooling
 
-$$T_{n+1} = T_n \cdot \alpha, \qquad \alpha = 1 - \text{cool\_rate} \approx 0.95\text{--}0.999$$
+$$T_{n+1} = T_n \cdot \alpha, \qquad \alpha = 1 - r_{cool} \approx 0.95\text{--}0.999$$
 
 Temperature decays geometrically. Spends more time at lower temperatures where fine-tuning occurs. Theoretical guarantees exist for convergence to the global optimum as $\alpha \to 1$ (infinitely slow cooling).
 

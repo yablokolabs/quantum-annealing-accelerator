@@ -535,8 +535,8 @@ The weight matrix is symmetric ($J_{ij} = J_{ji}$), so the host should write bot
 
 | Resource | Scaling | Formula (N = NUM_SPINS) |
 |---|---|---|
-| Weight storage | $O(N^2)$ | $N^2 \times \text{DATA\_WIDTH}$ bits |
-| Bias storage | $O(N)$ | $N \times \text{DATA\_WIDTH}$ bits |
+| Weight storage | $O(N^2)$ | $N^2$ × `DATA_WIDTH` bits |
+| Bias storage | $O(N)$ | $N$ × `DATA_WIDTH` bits |
 | Spin cells | $O(N)$ | $N$ instances |
 | Ising couplers | $O(N)$ | $N$ instances, each $O(N)$ internal |
 | Coupler logic | $O(N^2)$ | $N$ couplers × $N$ multiply-accumulate |
