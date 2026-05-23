@@ -27,9 +27,11 @@ This project implements a **quantum-inspired digital annealing accelerator** —
 
 The accelerator targets **NP-hard optimization problems** such as Max-Cut, Graph Partitioning, Boolean Satisfiability, and the Traveling Salesman Problem by mapping them onto the Ising model Hamiltonian:
 
-$$E = -\sum_{i \lt j} J_{ij}\,\sigma_i\,\sigma_j \;-\; \sum_i h_i\,\sigma_i$$
+```
+E = -Σ(i<j) Jᵢⱼ·σᵢ·σⱼ - Σᵢ hᵢ·σᵢ
+```
 
-where spins $\sigma_i \in \lbrace -1, +1 \rbrace$, couplings $J_{ij}$ encode problem constraints, and biases $h_i$ encode local preferences.
+where spins σᵢ ∈ {-1, +1}, couplings Jᵢⱼ encode problem constraints, and biases hᵢ encode local preferences.
 
 The design is inspired by industrial systems like the [Fujitsu Digital Annealer](https://www.fujitsu.com/global/services/business-services/digital-annealer/) and [Hitachi CMOS Annealing Machine](https://www.hitachi.com/rd/research/quantum/), implemented as a fully open-source, synthesizable RTL design targeting FPGA deployment.
 
@@ -116,8 +118,8 @@ Host CPU ──write──► config_registers ──weights/biases──► isi
 ### Cooling Strategies
 | Strategy | Formula | Use Case |
 |---|---|---|
-| **Linear** | $T_{n+1} = T_n - r$ | Fast convergence, simple problems |
-| **Exponential** | $T_{n+1} = T_n \cdot \alpha$ | Gradual cooling, better solution quality |
+| **Linear** | `T(n+1) = T(n) - r` | Fast convergence, simple problems |
+| **Exponential** | `T(n+1) = T(n) · α` | Gradual cooling, better solution quality |
 | **Adaptive** | Monitor stagnation, auto-adjust rate | Unknown problem difficulty |
 
 ### Update Modes
